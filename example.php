@@ -10,6 +10,7 @@
 
 // Load ICS parser
 require_once('addons/ics-parser/class.iCalReader.php');
+
 // Load iCloud Calendar class
 require_once('class.iCloudCalendar.class.php');
 
@@ -37,14 +38,18 @@ $icloud_calendar = new php_icloud_calendar($my_icloud_server, $my_user_id, $my_c
 $my_range_date_time_from = date("Y-m-d H:i:s", strtotime("-1 week"));
 $my_range_date_time_to = date("Y-m-d H:i:s", strtotime("+1 week"));
 $my_events = $icloud_calendar->get_events($my_range_date_time_from, $my_range_date_time_to);
+
+
+// Show iCloud events
 print_r($my_events);
 
 
 // Add iCloud event
+/*
 $icloud_calendar->add_event(date("Y-m-d 13:30:00"), 
 							date("Y-m-d 16:00:00"), 
 							"My event title", 
 							"My event description", 
 							"My City");
-
+*/
 

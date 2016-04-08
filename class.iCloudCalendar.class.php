@@ -99,6 +99,7 @@ class php_icloud_calendar {
 		$request_body .= '		</c:comp-filter>';
 		$request_body .= '	</c:filter>';
 		$request_body .= '</c:calendar-query>';
+		
 		$request_body = sprintf($request_body, date('Ymd\THis', strtotime($date_time_range_from)), date('Ymd\THis', strtotime($date_time_range_to)));
 		$caldav_answer = $this->_do_report_request($request_body);
 		
